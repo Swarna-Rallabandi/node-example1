@@ -3,7 +3,7 @@ const app = express();
 
 //Root route
 app.get('/', (req, res) => {
-    res.send('Hello, from docker session! Siva');
+    res.send('Hello, from hotfix branch session! Siva');
 });
 
 // Health check route
