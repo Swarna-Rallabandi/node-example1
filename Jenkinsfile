@@ -5,6 +5,7 @@ pipeline {
     environment {
         course = "kubernetes"
         name= "swarna"
+        cloud = "azure"
     }
     stages {
         stage('Build') {
@@ -16,12 +17,13 @@ pipeline {
                 //${params.variable}
                 echo "building the aplicationa"
                 echo "welcome ${name} enrolled ${course}"
+                echo "you are certified in1 ${cloud}"
             }
         }
         stage ('SecondStage'){
             steps {
                 echo " welcome to ${name}"
-                echo " you are certified in ${cloud}"
+                echo " you are certified in1 ${cloud}"
             }
         }
     }
