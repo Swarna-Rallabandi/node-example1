@@ -8,7 +8,7 @@ pipeline {
     }
     stages {
         stage('Build') {
-            environemt {
+            environment {
                 cloud = "GCP"
             }
             steps {
