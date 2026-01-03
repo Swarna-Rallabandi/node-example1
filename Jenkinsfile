@@ -7,8 +7,8 @@ pipeline {
         name= "swarna"
     }
     stages {
-        stage('Build'){
-            environemt{
+        stage('Build') {
+            environemt {
                 cloud = "GCP"
             }
             steps {
