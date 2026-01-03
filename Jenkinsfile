@@ -3,7 +3,7 @@ pipeline {
         label 'slave1'
     }
     environment {
-        DEPLOY_TO = 'development'
+        DEPLOY_TO = 'production'
     }
     stages{
         stage('prod'){
