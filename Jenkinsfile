@@ -1,30 +1,19 @@
 pipeline {
     agent {
-         label 'slave1'
+        lable 'slave1'
     }
     environment {
         course = "kubernetes"
-        name= "swarna"
-        cloud = "azure"
+        GITHUB_CREDS= credentials('swarna-ssh-creds')
     }
     stages {
-        stage('Build') {
-            environment {
-                cloud = "GCP"
-            }
+        stage('Build'){
             steps {
-                //${env.variable}
-                //${params.variable}
-                echo "building the aplicationa"
-                echo "welcome ${name} enrolled ${course}"
-                echo "you are certified in1 ${cloud}"
+                echo "my github credentials are ${GITHUB_CREDS}"
+                echo "username ${GITHUB_CREDS_USR}"
+                echo "password ${GITHUB_CREDS_PSW}"
             }
-        }
-        stage ('SecondStage'){
-            steps {
-                echo " welcome to ${name}"
-                echo " you are certified in1 ${cloud}"
-            }
+
         }
     }
 }
