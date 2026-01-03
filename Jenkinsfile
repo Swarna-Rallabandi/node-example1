@@ -4,8 +4,8 @@ pipeline {
     }
     stages {
         stage ('Build'){
-            steps{
-                echp "building the applicaiton"
+            steps {
+                echo "building the applicaiton"
             }
         }
         stage('Scans'){
