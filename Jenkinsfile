@@ -6,7 +6,7 @@ pipeline {
         stage ('Build'){
             steps{
                 echp "building the applicaiton"
-            }]
+            }
         }
         stage('Scans'){
           steps {
