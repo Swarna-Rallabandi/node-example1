@@ -4,7 +4,7 @@ pipeline {
     }
     parameters {
         string (
-            name: 'person',
+            name: 'PERSON',
             defaultValue: 'swarna',
             description: 'what is my name'
         )
@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage ('param') {
             steps {
-                echo "hellow ${params.name} swarna"
+                echo "hellow ${params.PERSON}"
             }
 
         }
