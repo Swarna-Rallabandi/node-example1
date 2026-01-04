@@ -1,36 +1,20 @@
-pipeline{
+pipeline {
     agent {
-        label 'slave1'
+        label "slave1"
+    }
+    parameters {
+        string (
+            name: 'person',
+            defaultValue: 'swarna'
+            description: 'what is my name'
+        )
     }
     stages {
-        stage ('build'){
+        stage ('param') {
             steps {
-                echo "building the application"
-                }
-            
-        }
-        stage('parellscans'){
-          parallel {
-            stage ('sonar'){
-                steps {
-                    echo "sonar stage is executing"
-                    sleep 10
-                }
+                echo "hellow ${params.name} swarna"
             }
-             stage ('Fortify'){
-                steps {
-                    echo "fortify stage is executing"
-                    sleep 10
-                }
-            }
-             stage ('prisma'){
-                steps {
-                    echo "prisma stage is executing"
-                    sleep 10
-                }
-            }
-          }
-        }
 
+        }
     }
 }
