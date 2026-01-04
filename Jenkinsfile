@@ -11,7 +11,7 @@ pipeline {
         choice (
             name: 'CHOICE',
             choices: ['oone', 'two', 'threee'],
-            descruotuib : 'pic some number'
+            description : 'pic some number'
         )
         booleanParam(
             name: 'TOGLE',
@@ -22,7 +22,7 @@ pipeline {
         text(
             name: 'RELEASE',
             defaultValue: '',
-            descruotuib : 'enter some details'
+            description : 'enter some details'
 
         )
     }
@@ -30,6 +30,9 @@ pipeline {
         stage ('param') {
             steps {
                 echo "hellow ${params.PERSON}"
+                echo "relase ${params.RELEASE}"
+                echo " ${params.TOGLE}"
+                echo " ${params.CHOICE}"
             }
 
         }
