@@ -34,7 +34,8 @@ pipeline {
           stage ('Deploytoprod'){
              when {
                 expression {
-                    BRANCH_NAME ==~ /(production|staging)/
+                    //v1.2.
+                    tag pattern: "v\\d{1,2}.\\d{1.2}.\\d{1,2}", comparator: 'REGEXP'
                 }
             }
             steps {
