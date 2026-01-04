@@ -9,7 +9,7 @@ pipeline {
             description: 'what is my name'
         )
         choice (
-            name: 'CHOICE'
+            name: 'CHOICE',
             choices: ['oone', 'two', 'threee'],
             descruotuib : 'pic some number'
         )
