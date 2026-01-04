@@ -3,17 +3,25 @@ pipeline {
         label 'slave1'
     }
     environment {
-        course = "kubernetes"
-        GITHUB_CREDS= credentials('swarna-ssh-creds')
+        DEPLOY_TO = 'production'
     }
-    stages {
-        stage('Build'){
+    stages{
+        stage("DeployToDev")        
+        {
             steps {
-                echo "my github credentials are ${GITHUB_CREDS}"
-                echo "username ${GITHUB_CREDS_USR}"
-                echo "password ${GITHUB_CREDS_PSW}"
+                   echo "deploy to dev env"
+            } 
+        }
+        stage('prod'){
+            when {
+                allOf {
+                    branch "production"
+                    environment name: 'DEPLOY_TO', value: 'production'
+                }
             }
-
+            steps {
+                echo "deploy to prod"
+            }
         }
     }
 }
