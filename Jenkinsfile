@@ -4,7 +4,10 @@ pipeline{
     }
     stages {
         stage ('build'){
-            echo "building the application"
+            steps {
+                echo "building the application"
+                }
+            
         }
         stage('parellscans'){
           parallel {
